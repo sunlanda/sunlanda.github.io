@@ -4,17 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>sunlanda的博客 | 前端开发者 | 记录我的日常 开发经验</title>
+  <title>我的时间观念 | sunlanda的博客 | 前端开发者 | 记录我的日常 开发经验</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sunlanda的博客 | 前端开发者 | 记录我的日常 开发经验">
-<meta property="og:url" content="http://sunlanda.github.io/index.html">
+  <meta name="description" content="每每晚睡都觉得心怀内疚，这是我之前每天晚睡的想法
+相信大家都有类似，上学考试会感叹玩的时间太少，上班赚钱会感叹休息时间不够。这都是对时间有着占有欲望的人，恨不得掰开两半用，但最终磨磨蹭蹭还是要透支掉明天的清醒来换一时亢奋。
+而现在，我更关注是否用同等的时间做了更有价值的事情，如果熬夜会使你在固定时期内达到想要的目的，我绝对不眨眼的牺牲睡眠。你会说那第二天果断困成狗啊，那我举例子老板说双十一前把lo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的时间观念">
+<meta property="og:url" content="http://sunlanda.github.io/2015/10/14/timemanage/index.html">
 <meta property="og:site_name" content="sunlanda的博客 | 前端开发者 | 记录我的日常 开发经验">
-<meta property="og:description">
+<meta property="og:description" content="每每晚睡都觉得心怀内疚，这是我之前每天晚睡的想法
+相信大家都有类似，上学考试会感叹玩的时间太少，上班赚钱会感叹休息时间不够。这都是对时间有着占有欲望的人，恨不得掰开两半用，但最终磨磨蹭蹭还是要透支掉明天的清醒来换一时亢奋。
+而现在，我更关注是否用同等的时间做了更有价值的事情，如果熬夜会使你在固定时期内达到想要的目的，我绝对不眨眼的牺牲睡眠。你会说那第二天果断困成狗啊，那我举例子老板说双十一前把lo">
+<meta property="og:updated_time" content="2016-03-04T17:25:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sunlanda的博客 | 前端开发者 | 记录我的日常 开发经验">
-<meta name="twitter:description">
+<meta name="twitter:title" content="我的时间观念">
+<meta name="twitter:description" content="每每晚睡都觉得心怀内疚，这是我之前每天晚睡的想法
+相信大家都有类似，上学考试会感叹玩的时间太少，上班赚钱会感叹休息时间不够。这都是对时间有着占有欲望的人，恨不得掰开两半用，但最终磨磨蹭蹭还是要透支掉明天的清醒来换一时亢奋。
+而现在，我更关注是否用同等的时间做了更有价值的事情，如果熬夜会使你在固定时期内达到想要的目的，我绝对不眨眼的牺牲睡眠。你会说那第二天果断困成狗啊，那我举例子老板说双十一前把lo">
   
     <link rel="alternative" href="/atom.xml" title="sunlanda的博客 | 前端开发者 | 记录我的日常 开发经验" type="application/atom+xml">
   
@@ -182,69 +189,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-property" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/02/property/" class="article-date">
-  	<time datetime="2015-11-02T04:49:55.000Z" itemprop="datePublished">2015-11-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/02/property/">网页性能调优之简述</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个界面从打开到展现需要经历怎样的过程<br>最近看到一个非常寂寞的句子:你点击三次打开一个app,发送一个表情,这条数据被二进制后加密解密传输到服务器,穿越wifi,光缆,大街上的风景,到达我的手机,同样是及时性的,我却觉得你抬一下头冲我笑一下更美.</p>
-<p>好,谈正题,今天要说的是<strong>前端页面资源加速</strong>问题 </p>
-<p>为什么页面慢,打开延迟?图片半天刷不出来?</p>
-<p>解决方案:</p>
-<table><br>    <tr><br>        <th rowspan="1">突破口</th><br>        <th>文件大小</th><br>        <th>访问距离</th><br>        <th>请求数</th><br>    </tr><br>    <tr><br>    <th rowspan="1">优化原则</th><br>        <td>页面所包含文件最小</td><br>        <td>访问者与服务器距离最近</td><br>        <td>访问者访问在一个页面请求数最少</td><br>    </tr><br>    <tr><br>    <th rowspan="1">解决方案</th><br><br>        <td> 图片尽量小于800px的宽高,如果超过该像素,善用背景色填充.logo用font-face字体图标/svg绘制,方便改颜色和调整大小.此处需要提一下加载顺序,通过异步刷新(ajax)让页面仅进行数据交互,减少全局刷新次数,通过懒加载(lazyload),让用户先看到首屏和重要信息,滚动或下一页触发相应数据读取.<br>        </td><br><br>        <td>如果自己搭的网站服务器一般都是离自己进,但如果网站用户基本在另一个区域,那访问起来还是会有一些延迟的,这也就是这几年为什么cdn分发这么火的原因,可以根据用户IP进行定位解析,将访问指向最近的服务器进行吞吐数据,提高访问速度.还有就是组件库别用自己服务器的,换成百度(阿里的也行,速度快)静态cdn库,如jquery啦,bootstrap啦,ng啦都可以.</td><br><br>        <td>icon统一用精灵图合并(加载一张图,幸福全站点)css,js文件合并也可以减少请求数,不过对于新手来说比较头疼,就是自己写的全局变量很容易污染其他,而很多公司用的是老系统也只是修修补补,依赖太严重,要小心合并.对大量数据交互行为进行限制,譬如用户上传文件的大小,对高频次同IP访问设置恶意限制.最后提一下本地缓存,如果你的网站具备高粘性(如电商/资讯平台/常用工具类高pv站)那就把核心组件写进local吧</td><br><br>    </tr><br></table>
-
-
-<p>性能调优是个持久战,我会继续更新的.</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-timemanage" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-timemanage" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/10/14/timemanage/" class="article-date">
@@ -260,12 +205,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/14/timemanage/">我的时间观念</a>
+    <h1 class="article-title" itemprop="name">
+      我的时间观念
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -292,29 +244,72 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/02/property/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          网页性能调优之简述
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
 
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="timemanage" data-title="我的时间观念" data-url="http://sunlanda.github.io/2015/10/14/timemanage/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-  
-  
+
+
+
 </div>
       <footer id="footer">
   <div class="outer">
@@ -338,8 +333,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
